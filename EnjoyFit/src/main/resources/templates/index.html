@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="utf-8" content="width=device-width, initial-scale=1">
+<link th:href="@{/css/Home.css}" rel="stylesheet">
+<title>Museo</title>
+</head>
+<body>
+	<section class="showcase">
+		<header>
+			<h2 class="logo">Culture</h2>
+			<div class="toggle"></div>
+		</header>
+		<video
+			src="https://api-www.louvre.fr/sites/default/files/videos/video_7_8_768/video.mp4"
+			muted loop autoplay></video>
+		<div class="overlay"></div>
+		<div class="text">
+			<h2>Museo ET</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+				do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+				enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+				ut aliquip ex ea commodo consequat.</p>
+			<a class="a1" th:href="@{/login}">Accedi</a>
+			<a class="a2" th:href="@{/register}">Registrati</a>
+		</div>
+		<ul class="social">
+			<li><a href="#"><img
+					src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+			<li><a href="#"><img
+					src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+			<li><a href="#"><img
+					src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+		</ul>
+	</section>
+	<div class="menu">
+		<ul>
+			<li><a th:href="@{/}">Home</a></li>
+			<li><a th:href="@{/artisti}">Autori</a></li>
+			<li><a th:href="@{/collezioni}">Collezioni</a></li>
+			<li><a href="#">Informazioni</a></li>
+			<li><a href="#">Contatti</a></li>
+		</ul>
+	</div>
+	<script>
+	 const menuToggle = document.querySelector('.toggle');
+     const showcase = document.querySelector('.showcase');
+     menuToggle.addEventListener('click', () => {
+       menuToggle.classList.toggle('active');
+       showcase.classList.toggle('active');
+     })
+	</script>
+</body>
+</html>

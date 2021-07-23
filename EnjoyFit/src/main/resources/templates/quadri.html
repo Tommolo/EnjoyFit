@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<link rel="stylesheet" th:href="@{/css/quadro/quadri.css}" />
+<head>
+<meta charset="utf-8" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<section>
+		<div class="list">
+			<p>Lista di quadri</p>
+			<ul>
+				<li th:each="quadro : ${quadri}"><a href="quadro.html"
+					th:href="@{'/quadro' + '/' + ${quadro.id}}"
+					th:text="${quadro.titolo}">Titolo</a> <span class="canc"
+					sec:authorize="hasAuthority('ADMIN')"><a href="quadri.html"
+						th:href="@{'/admin/quadro/' + ${quadro.id}}"> Elimina</a></span></li>
+			</ul>
+		</div>
+	</section>
+
+</body>
+</html>
